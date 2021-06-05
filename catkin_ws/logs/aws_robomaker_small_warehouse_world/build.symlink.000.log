@@ -1,0 +1,3 @@
+Symlinking /home/aitik/catkin_ws/devel/lib/pkgconfig/aws_robomaker_small_warehouse_world.pc
+Symlinking /home/aitik/catkin_ws/devel/share/aws_robomaker_small_warehouse_world/cmake/aws_robomaker_small_warehouse_worldConfig-version.cmake
+Symlinking /home/aitik/catkin_ws/devel/share/aws_robomaker_small_warehouse_world/cmake/aws_robomaker_small_warehouse_worldConfig.cmake

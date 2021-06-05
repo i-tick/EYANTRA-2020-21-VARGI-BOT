@@ -1,0 +1,6 @@
+Warning: Cannot symlink from /home/aitik/catkin_ws/devel/.private/gazebo_ros/lib/libgazebo_ros_api_plugin.so to existing file /home/aitik/catkin_ws/devel/lib/libgazebo_ros_api_plugin.so
+Warning: Source hash: b122654b476dbbb02d803dfb9f1b0332
+Warning: Dest hash: f5e30b9e2b664e4eb2e79948bc76cba6
+Warning: Cannot symlink from /home/aitik/catkin_ws/devel/.private/gazebo_ros/lib/libgazebo_ros_paths_plugin.so to existing file /home/aitik/catkin_ws/devel/lib/libgazebo_ros_paths_plugin.so
+Warning: Source hash: a8a5507669597472f41635f7255d9bea
+Warning: Dest hash: 1ccbf3b221cf3f32056d8f1976b94e77

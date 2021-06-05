@@ -1,0 +1,16 @@
+# config_iot_ros.yaml 
+# Config file to store intervals at which to place online orders
+config_task5:
+  mqtt_server_url: "broker.mqttdashboard.com"
+  mqtt_server_port: 1883
+  mqtt_qos: 0
+  mqtt_unique_id: "AiRiAkAk"
+
+# Config file to store intervals at which to place online orders
+google_sheets:
+  inventory: "https://script.google.com/macros/s/AKfycby_M9efwsF0Bc5DQc4X7CpIWALNYtvC6oyzcVUqiTSUaVdm7Y92KluR/exec"
+  incoming: "https://script.google.com/macros/s/AKfycby_M9efwsF0Bc5DQc4X7CpIWALNYtvC6oyzcVUqiTSUaVdm7Y92KluR/exec"
+  dispatch: "https://script.google.com/macros/s/AKfycbyaL3hI8IpTETKV6ZG7xNtn3_yhY9SXzIkAFCbjtjLJnprVH6ol_T0C/exec"
+  shipping: "https://script.google.com/macros/s/AKfycbxEujrxYzn6uhcI9IKyHt-PumJxPJFYRxYtC3TRhW1fHgQ5yiFIjHIulg/exec"
+  dashboard: "https://script.google.com/macros/s/AKfycbwSIlhcDDLfluUno3_GtpUYLJJ9UlPsWMddO8dtoWQVp_n1tiPf8xTvcA/exec"
+  eyantra_sheet: "https://script.google.com/macros/s/AKfycbw5xylppoda-8HPjt2Tzq4ShU_Xef-Ik-hEtBPcPk0gdGw8095j4RZ7/exec"

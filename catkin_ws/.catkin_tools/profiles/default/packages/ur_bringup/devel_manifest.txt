@@ -1,0 +1,5 @@
+vb_simulation_pkgs/universal_robot/ur_bringup
+/home/aitik/catkin_ws/devel/.private/ur_bringup/cmake.lock /home/aitik/catkin_ws/devel/./cmake.lock
+/home/aitik/catkin_ws/devel/.private/ur_bringup/lib/pkgconfig/ur_bringup.pc /home/aitik/catkin_ws/devel/lib/pkgconfig/ur_bringup.pc
+/home/aitik/catkin_ws/devel/.private/ur_bringup/share/ur_bringup/cmake/ur_bringupConfig.cmake /home/aitik/catkin_ws/devel/share/ur_bringup/cmake/ur_bringupConfig.cmake
+/home/aitik/catkin_ws/devel/.private/ur_bringup/share/ur_bringup/cmake/ur_bringupConfig-version.cmake /home/aitik/catkin_ws/devel/share/ur_bringup/cmake/ur_bringupConfig-version.cmake

@@ -1,0 +1,1 @@
+/home/aitik/catkin_ws/devel/.private/pkg_moveit_ur5_2_config/lib/pkgconfig/pkg_moveit_ur5_2_config.pc

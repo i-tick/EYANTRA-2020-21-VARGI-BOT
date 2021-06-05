@@ -1,0 +1,1 @@
+/home/aitik/catkin_ws/devel/.private/pkg_ros_actions/share/pkg_ros_actions/cmake/pkg_ros_actionsConfig-version.cmake

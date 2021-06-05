@@ -1,0 +1,5 @@
+vb_simulation_pkgs/example_pkgs/pkg_moveit_examples
+/home/aitik/catkin_ws/devel/.private/pkg_moveit_examples/cmake.lock /home/aitik/catkin_ws/devel/./cmake.lock
+/home/aitik/catkin_ws/devel/.private/pkg_moveit_examples/lib/pkgconfig/pkg_moveit_examples.pc /home/aitik/catkin_ws/devel/lib/pkgconfig/pkg_moveit_examples.pc
+/home/aitik/catkin_ws/devel/.private/pkg_moveit_examples/share/pkg_moveit_examples/cmake/pkg_moveit_examplesConfig-version.cmake /home/aitik/catkin_ws/devel/share/pkg_moveit_examples/cmake/pkg_moveit_examplesConfig-version.cmake
+/home/aitik/catkin_ws/devel/.private/pkg_moveit_examples/share/pkg_moveit_examples/cmake/pkg_moveit_examplesConfig.cmake /home/aitik/catkin_ws/devel/share/pkg_moveit_examples/cmake/pkg_moveit_examplesConfig.cmake

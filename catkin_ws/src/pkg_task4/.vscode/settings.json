@@ -1,0 +1,9 @@
+{
+    "ros.distro": "melodic",
+    "python.autoComplete.extraPaths": [
+        "/home/aitik/cheat/devel/lib/python2.7/dist-packages",
+        "/home/aitik/catkin_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "python.pythonPath": "/usr/bin/python"
+}

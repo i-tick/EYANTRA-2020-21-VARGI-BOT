@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/gazebo_msgs_generate_messages_cpp"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/ODEPhysics.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/ContactsState.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/LinkState.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/SensorPerformanceMetric.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/ModelState.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/ModelStates.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/PerformanceMetrics.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/ContactState.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/LinkStates.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/ODEJointProperties.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/WorldState.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/SetModelState.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/SetJointTrajectory.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/DeleteLight.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/DeleteModel.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/GetLinkProperties.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/GetPhysicsProperties.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/SetLinkState.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/GetLightProperties.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/GetModelState.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/SetLinkProperties.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/GetModelProperties.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/ApplyBodyWrench.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/SetJointProperties.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/GetJointProperties.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/SpawnModel.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/ApplyJointEffort.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/SetModelConfiguration.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/GetLinkState.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/BodyRequest.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/JointRequest.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/SetPhysicsProperties.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/GetWorldProperties.h"
+  "/home/aitik/catkin_ws/devel/.private/gazebo_msgs/include/gazebo_msgs/SetLightProperties.h"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

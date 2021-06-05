@@ -1,0 +1,16 @@
+Could not create symlink `/home/aitik/catkin_ws/devel/lib/libConveyorBeltPlugin.so` referencing `/home/aitik/catkin_ws/devel/.private/gazebo_conveyor/lib/libConveyorBeltPlugin.so`
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/catkin_tools/execution/stages.py", line 174, in function_proxy
+    return function(logger, event_queue, *args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/catkin_tools/jobs/catkin.py", line 308, in link_devel_products
+    os.symlink(source_file, dest_file)
+OSError: [Errno 17] File exists
+
+Stage `symlink` failed with arguments:
+  package: {'buildtool_export_depends': [], 'test_depends': [], 'exec_depends': [Dependency(name='message_runtime', evaluated_condition=True), Dependency(name='gazebo_plugins', evaluated_condition=True), Dependency(name='gazebo_ros', evaluated_condition=True), Dependency(name='roscpp', evaluated_condition=True), Dependency(name='std_msgs', evaluated_condition=True), Dependency(name='std_srvs', evaluated_condition=True)], 'build_depends': [Dependency(name='message_generation', evaluated_condition=True), Dependency(name='gazebo_plugins', evaluated_condition=True), Dependency(name='gazebo_ros', evaluated_condition=True), Dependency(name='roscpp', evaluated_condition=True), Dependency(name='std_msgs', evaluated_condition=True), Dependency(name='std_srvs', evaluated_condition=True)], 'licenses': ['GPLv3'], 'group_depends': [], 'doc_depends': [], 'filename': '/home/aitik/catkin_ws/src/vb_simulation_pkgs/gazebo-conveyor/package.xml', 'version': '1.0.0', 'package_format': 2, 'exports': [], 'description': u'Plugin for gazebo, to simulate a conveyor belt.', 'build_export_depends': [Dependency(name='gazebo_plugins', evaluated_condition=True), Dependency(name='gazebo_ros', evaluated_condition=True), Dependency(name='roscpp', evaluated_condition=True), Dependency(name='std_msgs', evaluated_condition=True), Dependency(name='std_srvs', evaluated_condition=True)], 'maintainers': [<catkin_pkg.package.Person object at 0x7ff0f361cad0>], 'member_of_groups': [], 'authors': [<catkin_pkg.package.Person object at 0x7ff0f361cb50>, <catkin_pkg.package.Person object at 0x7ff0f361cbd0>, <catkin_pkg.package.Person object at 0x7ff0f361cc50>, <catkin_pkg.package.Person object at 0x7ff0f361ccd0>, <catkin_pkg.package.Person object at 0x7ff0f361cd50>, <catkin_pkg.package.Person object at 0x7ff0f361cdd0>, <catkin_pkg.package.Person object at 0x7ff0f361ce50>, <catkin_pkg.package.Person object at 0x7ff0f361ced0>, <catkin_pkg.package.Person object at 0x7ff0f361cf50>, <catkin_pkg.package.Person object at 0x7ff0f361cfd0>, <catkin_pkg.package.Person object at 0x7ff0f363e090>, <catkin_pkg.package.Person object at 0x7ff0f363e110>, <catkin_pkg.package.Person object at 0x7ff0f363e190>], 'conflicts': [], 'buildtool_depends': [Dependency(name='catkin', evaluated_condition=True)], 'version_compatibility': None, 'replaces': [], 'name': 'gazebo_conveyor', 'urls': [<catkin_pkg.package.Url object at 0x7ff0f363e250>]}
+  metadata_path: /home/aitik/catkin_ws/.catkin_tools/profiles/default
+  devel_manifest_path: /home/aitik/catkin_ws/.catkin_tools/profiles/default/packages/gazebo_conveyor
+  prebuild: False
+  package_path: vb_simulation_pkgs/gazebo-conveyor
+  dest_devel_path: /home/aitik/catkin_ws/devel
+  source_devel_path: /home/aitik/catkin_ws/devel/.private/gazebo_conveyor

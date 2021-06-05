@@ -1,0 +1,15 @@
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target _gazebo_ros_link_attacher_generate_messages_check_deps_Attach
+[ 22%] Built target gazebo_ros_link_attacher_generate_messages_py
+[ 33%] Built target gazebo_ros_link_attacher_generate_messages_cpp
+[ 55%] Built target gazebo_ros_link_attacher_generate_messages_eus
+[ 66%] Built target gazebo_ros_link_attacher_generate_messages_nodejs
+[ 77%] Built target gazebo_ros_link_attacher_generate_messages_lisp
+[ 88%] [32mBuilding CXX object CMakeFiles/gazebo_ros_link_attacher.dir/src/gazebo_ros_link_attacher.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /home/aitik/catkin_ws/devel/.private/gazebo_ros_link_attacher/lib/libgazebo_ros_link_attacher.so[0m
+[100%] Built target gazebo_ros_link_attacher
+[100%] Built target gazebo_ros_link_attacher_generate_messages

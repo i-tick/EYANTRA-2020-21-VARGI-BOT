@@ -1,0 +1,8 @@
+prefix=/home/aitik/catkin_ws/devel/.private/pkg_task5
+
+Name: pkg_task5
+Description: Description of pkg_task5
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

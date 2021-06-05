@@ -1,0 +1,23 @@
+Symlinking /home/aitik/catkin_ws/devel/include/gazebo_ros_link_attacher/AttachResponse.h
+Symlinking /home/aitik/catkin_ws/devel/include/gazebo_ros_link_attacher/Attach.h
+Symlinking /home/aitik/catkin_ws/devel/include/gazebo_ros_link_attacher/AttachRequest.h
+Warning: Cannot symlink from /home/aitik/catkin_ws/devel/.private/gazebo_ros_link_attacher/lib/libgazebo_ros_link_attacher.so to existing file /home/aitik/catkin_ws/devel/lib/libgazebo_ros_link_attacher.so
+Warning: Source hash: 39dc0a9fec09ec92b9f08363c3074478
+Warning: Dest hash: 0fe8ed62199d224d73fa6aa7063821a4
+Symlinking /home/aitik/catkin_ws/devel/lib/python2.7/dist-packages/gazebo_ros_link_attacher/__init__.py
+Symlinking /home/aitik/catkin_ws/devel/lib/python2.7/dist-packages/gazebo_ros_link_attacher/srv/_Attach.py
+Symlinking /home/aitik/catkin_ws/devel/lib/python2.7/dist-packages/gazebo_ros_link_attacher/srv/__init__.py
+Symlinking /home/aitik/catkin_ws/devel/lib/pkgconfig/gazebo_ros_link_attacher.pc
+Symlinking /home/aitik/catkin_ws/devel/share/gazebo_ros_link_attacher/cmake/gazebo_ros_link_attacher-msg-extras.cmake
+Symlinking /home/aitik/catkin_ws/devel/share/gazebo_ros_link_attacher/cmake/gazebo_ros_link_attacher-msg-paths.cmake
+Symlinking /home/aitik/catkin_ws/devel/share/gazebo_ros_link_attacher/cmake/gazebo_ros_link_attacherConfig-version.cmake
+Symlinking /home/aitik/catkin_ws/devel/share/gazebo_ros_link_attacher/cmake/gazebo_ros_link_attacherConfig.cmake
+Symlinking /home/aitik/catkin_ws/devel/share/roseus/ros/gazebo_ros_link_attacher/manifest.l
+Symlinking /home/aitik/catkin_ws/devel/share/roseus/ros/gazebo_ros_link_attacher/srv/Attach.l
+Symlinking /home/aitik/catkin_ws/devel/share/common-lisp/ros/gazebo_ros_link_attacher/srv/Attach.lisp
+Symlinking /home/aitik/catkin_ws/devel/share/common-lisp/ros/gazebo_ros_link_attacher/srv/_package.lisp
+Symlinking /home/aitik/catkin_ws/devel/share/common-lisp/ros/gazebo_ros_link_attacher/srv/gazebo_ros_link_attacher-srv.asd
+Symlinking /home/aitik/catkin_ws/devel/share/common-lisp/ros/gazebo_ros_link_attacher/srv/_package_Attach.lisp
+Symlinking /home/aitik/catkin_ws/devel/share/gennodejs/ros/gazebo_ros_link_attacher/_index.js
+Symlinking /home/aitik/catkin_ws/devel/share/gennodejs/ros/gazebo_ros_link_attacher/srv/Attach.js
+Symlinking /home/aitik/catkin_ws/devel/share/gennodejs/ros/gazebo_ros_link_attacher/srv/_index.js

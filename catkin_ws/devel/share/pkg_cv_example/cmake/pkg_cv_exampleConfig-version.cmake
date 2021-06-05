@@ -1,0 +1,1 @@
+/home/aitik/catkin_ws/devel/.private/pkg_cv_example/share/pkg_cv_example/cmake/pkg_cv_exampleConfig-version.cmake

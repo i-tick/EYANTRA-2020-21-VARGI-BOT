@@ -1,0 +1,5 @@
+pkg_task4
+/home/aitik/catkin_ws/devel/.private/pkg_task4/cmake.lock /home/aitik/catkin_ws/devel/./cmake.lock
+/home/aitik/catkin_ws/devel/.private/pkg_task4/lib/pkgconfig/pkg_task4.pc /home/aitik/catkin_ws/devel/lib/pkgconfig/pkg_task4.pc
+/home/aitik/catkin_ws/devel/.private/pkg_task4/share/pkg_task4/cmake/pkg_task4Config.cmake /home/aitik/catkin_ws/devel/share/pkg_task4/cmake/pkg_task4Config.cmake
+/home/aitik/catkin_ws/devel/.private/pkg_task4/share/pkg_task4/cmake/pkg_task4Config-version.cmake /home/aitik/catkin_ws/devel/share/pkg_task4/cmake/pkg_task4Config-version.cmake
