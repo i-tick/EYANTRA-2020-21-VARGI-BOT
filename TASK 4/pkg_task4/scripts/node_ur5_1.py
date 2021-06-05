@@ -1,0 +1,456 @@
+#! /usr/bin/env python
+
+# importing the required package
+import rospy
+import sys
+import copy
+import moveit_commander
+import moveit_msgs.msg
+import geometry_msgs.msg
+import actionlib
+import math
+import rospkg
+import yaml
+import tf2_ros
+import tf2_msgs.msg
+from pkg_vb_sim.srv import vacuumGripper
+from pkg_vb_sim.srv import conveyorBeltPowerMsg
+from std_srvs.srv import Empty
+import cv2
+from std_msgs.msg import String
+from sensor_msgs.msg import Image
+from cv_bridge import CvBridge, CvBridgeError
+from pyzbar.pyzbar import decode
+from random import random
+import threading
+import time
+
+
+# empty list to store the positions of red, yellow and green packages respectively
+pkg_red=[]
+pkg_yellow=[]
+pkg_green=[]
+
+
+# class to implement the task
+class Ur5Moveit:
+
+	# Constructor
+	def __init__(self, arg_robot_name):
+		self.bridge = CvBridge()
+
+		if len(pkg_green)<3:
+
+			# subsciber used to call the 2D camera 
+			self.image_sub = rospy.Subscriber("/eyrc/vb/camera_1/image_raw", Image,self.callback)
+
+
+		self._robot_ns = '/'  + arg_robot_name
+		self._planning_group = "manipulator"
+		
+		self._commander = moveit_commander.roscpp_initialize(sys.argv)
+		self._robot = moveit_commander.RobotCommander(robot_description= self._robot_ns + "/robot_description", ns=self._robot_ns)
+		self._scene = moveit_commander.PlanningSceneInterface(ns=self._robot_ns)
+		self._group = moveit_commander.MoveGroupCommander(self._planning_group, robot_description= self._robot_ns + "/robot_description", ns=self._robot_ns)
+		self._display_trajectory_publisher = rospy.Publisher( self._robot_ns + '/move_group/display_planned_path', moveit_msgs.msg.DisplayTrajectory, queue_size=1)
+		self._exectute_trajectory_client = actionlib.SimpleActionClient( self._robot_ns + '/execute_trajectory', moveit_msgs.msg.ExecuteTrajectoryAction)
+		self._exectute_trajectory_client.wait_for_server()
+
+		self._planning_frame = self._group.get_planning_frame()
+		self._eef_link = self._group.get_end_effector_link()
+		self._group_names = self._robot.get_group_names()
+		self._box_name = ''
+
+
+		# Attribute to store computed trajectory by the planner	
+		self._computed_plan = ''
+
+		# Current State of the Robot is needed to add box to planning scene
+		self._curr_state = self._robot.get_current_state()
+
+		rospy.loginfo(
+			'\033[94m' + "Planning Group: {}".format(self._planning_frame) + '\033[0m')
+		rospy.loginfo(
+			'\033[94m' + "End Effector Link: {}".format(self._eef_link) + '\033[0m')
+		rospy.loginfo(
+			'\033[94m' + "Group Names: {}".format(self._group_names) + '\033[0m')
+
+
+		rp = rospkg.RosPack()
+		self._pkg_path = rp.get_path('pkg_moveit_examples')
+		self._file_path = self._pkg_path + '/config/saved_trajectories/'
+		rospy.loginfo( "Package Path: {}".format(self._file_path) )
+
+
+		rospy.loginfo('\033[94m' + " >>> Ur5Moveit init done." + '\033[0m')
+	
+	# this is used to extract the info from the qr code detected such as color, position, etc.
+	def get_qr_data(self, arg_image):
+		qr_result = decode(arg_image)
+		color=[]
+		for i in qr_result:
+			color.append(i.data)
+		return qr_result
+		if ( len( qr_result ) > 0):
+			return (qr_result[0].data)
+		else :
+			return ('NA')
+
+    # this function is used to implement the image processing
+  	def callback(self,data):
+		global pkg_red,pkg_yellow,pkg_green
+		try:
+			cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
+		except CvBridgeError as e:
+			rospy.logerr(e)
+
+		(rows,cols,channels) = cv_image.shape
+		
+		image = cv_image
+
+		resized_image = cv2.resize(image, (720/2, 1280/2)) 
+		gray = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)
+		ret,thresh3 = cv2.threshold(gray,41,255,cv2.THRESH_BINARY)
+
+
+
+		codes = self.get_qr_data(thresh3)
+		color = []
+
+
+		for code in codes:
+			color.append(code.data)
+			x, y, w, h = code.rect.left, code.rect.top, code.rect.width, code.rect.height
+			cv2.rectangle(resized_image, (x,y),(x+w, y+h),(255, 0, 0), 8)
+
+			# for red package
+			if code.data=="red":
+				
+				if code.rect.left in range(60,68):
+				
+					if code.rect.top in range(155,159):
+						pkg_red.append('00')
+				
+					elif code.rect.top in range(245,249):
+						pkg_red.append('10')
+				
+					elif code.rect.top in range(319,325):
+						pkg_red.append('20')
+				
+					elif code.rect.top in range(395,399):
+						pkg_red.append('30')
+				
+				elif code.rect.left in range(155,159):
+				
+					if code.rect.top in range(155,159):
+						pkg_red.append('01')
+				
+					elif code.rect.top in range(245,249):
+						pkg_red.append('11')
+				
+					elif code.rect.top in range(319,325):
+						pkg_red.append('21')
+				
+					elif code.rect.top in range(395,399):
+						pkg_red.append('31')
+				
+				elif code.rect.left in range(249,255):
+				
+					if code.rect.top in range(155,159):
+						pkg_red.append('02')
+				
+					elif code.rect.top in range(245,249):
+						pkg_red.append('12')
+				
+					elif code.rect.top in range(319,325):
+						pkg_red.append('22')
+				
+					elif code.rect.top in range(395,399):
+						pkg_red.append('32')
+			
+			# for green package
+			elif code.data=="green":
+			
+				if code.rect.left in range(60,68):
+			
+					if code.rect.top in range(155,159):
+						pkg_green.append('00')
+			
+					elif code.rect.top in range(245,249):
+						pkg_green.append('10')
+			
+					elif code.rect.top in range(319,325):
+						pkg_green.append('20')
+			
+					elif code.rect.top in range(395,399):
+						pkg_green.append('30')
+			
+				elif code.rect.left in range(155,159):
+			
+					if code.rect.top in range(155,159):
+						pkg_green.append('01')
+			
+					elif code.rect.top in range(245,249):
+						pkg_green.append('11')
+			
+					elif code.rect.top in range(319,325):
+						pkg_green.append('21')
+			
+					elif code.rect.top in range(395,399):
+						pkg_green.append('31')
+			
+				elif code.rect.left in range(249,255):
+			
+					if code.rect.top in range(155,159):
+						pkg_green.append('02')
+			
+					elif code.rect.top in range(245,249):
+						pkg_green.append('12')
+			
+					elif code.rect.top in range(319,325):
+						pkg_green.append('22')
+			
+					elif code.rect.top in range(395,399):
+						pkg_green.append('32')
+			
+			# for yellow package
+			elif code.data=="yellow":
+			
+				if code.rect.left in range(60,68):
+			
+					if code.rect.top in range(155,159):
+						pkg_yellow.append('00')
+			
+					elif code.rect.top in range(245,249):
+						pkg_yellow.append('10')
+			
+					elif code.rect.top in range(319,325):
+						pkg_yellow.append('20')
+			
+					elif code.rect.top in range(395,399):
+						pkg_yellow.append('30')
+			
+				elif code.rect.left in range(155,161):
+			
+					if code.rect.top in range(155,159):
+						pkg_yellow.append('01')
+			
+					elif code.rect.top in range(245,249):
+						pkg_yellow.append('11')
+			
+					elif code.rect.top in range(319,325):
+						pkg_yellow.append('21')
+					elif code.rect.top in range(390,400):
+						pkg_yellow.append('31')
+			
+				elif code.rect.left in range(249,255):
+			
+					if code.rect.top in range(155,159):
+						pkg_yellow.append('02')
+			
+					elif code.rect.top in range(245,249):
+						pkg_yellow.append('12')
+			
+					elif code.rect.top in range(319,325):
+						pkg_yellow.append('22')
+			
+					elif code.rect.top in range(395,399):
+						pkg_yellow.append('32')
+
+		
+			
+			
+			# to draw the polydon around the boxes and write the color of the packages
+			cv2.rectangle(resized_image, code.polygon[0], code.polygon[1],(0, 255, 0), 4)
+			cv2.putText(resized_image, code.data+str(code.rect.top), (x-1, y-1),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+			
+		text1 = 'No. Codes: %s' % len(codes)
+		cv2.putText(resized_image, text1, (5, 15),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+		
+		cv2.waitKey(1)
+
+	def clear_octomap(self):
+		clear_octomap_service_proxy = rospy.ServiceProxy(self._robot_ns + "/clear_octomap", Empty)
+		return clear_octomap_service_proxy()
+
+	# to execute the arm using the saved path in config folder
+	def moveit_play_planned_path_from_file(self, arg_file_path, arg_file_name):
+		file_path = arg_file_path + arg_file_name
+		
+		with open(file_path, 'r') as file_open:
+			loaded_plan = yaml.load(file_open)
+		
+		ret = self._group.execute(loaded_plan)
+		# rospy.logerr(ret)
+		return ret
+
+	#Function to activate/deactivate the vacuum gripper
+	def vaccum(self,condition):
+
+		rospy.wait_for_service('/eyrc/vb/ur5/activate_vacuum_gripper/ur5_1')
+		try:
+			self.gripper = rospy.ServiceProxy('/eyrc/vb/ur5/activate_vacuum_gripper/ur5_1', vacuumGripper)
+			result=self.gripper(condition)
+
+        #return gripper.result
+		except Exception as e:
+			rospy.logerr("Service call failed: %s"%e)
+
+
+	#Function to add a box to the planning scene
+	def add_box(self,x,y,z):
+
+		scene = self._scene
+		box_pose = geometry_msgs.msg.PoseStamped()
+		box_pose.header.frame_id = "world"
+		box_pose.pose.orientation.w = 1.0
+		box_pose.pose.position.x = x
+		box_pose.pose.position.y = y
+		box_pose.pose.position.z = z
+		scene.add_box(self._box_name, box_pose, size=(0.15, 0.15, 0.15))
+ 
+	#Function to attach the box to the vacuum gripper
+	def attach_box(self,condition):
+
+		self._scene = moveit_commander.PlanningSceneInterface(ns=self._robot_ns)
+		grasping_group = 'manipulator'
+		touch_links = self._robot.get_link_names(group=grasping_group)
+		if condition == 'attach':
+			self._scene.attach_box(self._eef_link, self._box_name, touch_links=touch_links)
+			rospy.loginfo("ATTCHED")
+		elif condition == 'detach':
+			self._scene.remove_attached_object(self._eef_link, name=self._box_name)
+
+	#Function to remove box from the planning scene
+	def remove_box(self, timeout=4):
+
+		box_name = self._box_name
+		scene = self._scene
+		scene.remove_world_object(box_name)
+
+	# to execute the arm using saved path for given number of times if failed
+	def moveit_hard_play_planned_path_from_file(self, arg_file_path, arg_file_name, arg_max_attempts):
+		number_attempts = 0
+		flag_success = False
+
+		while ( (number_attempts <= arg_max_attempts) and (flag_success is False) ):
+			number_attempts += 1
+			flag_success = self.moveit_play_planned_path_from_file(arg_file_path, arg_file_name)
+			rospy.logwarn("attempts: {}".format(number_attempts) )
+			# # self.clear_octomap()
+		
+		return True
+
+		
+	# Destructor
+	def __del__(self):
+		moveit_commander.roscpp_shutdown()
+		rospy.loginfo(
+			'\033[94m' + "Object of class Ur5Moveit Deleted." + '\033[0m')
+
+
+
+def main():
+	
+
+	rospy.init_node('node_ur5_1', anonymous=True)
+	ur5 = Ur5Moveit(sys.argv[1])
+	rospy.sleep(10)
+
+
+	#Storing the list of positions of red boxes in a set
+	red_set=set(pkg_red)
+
+	#Storing the list of positions of yellow boxes in a set
+	yellow_set=set(pkg_yellow)
+
+	#Storing the list of positions of green boxes in a set
+	green_set=set(pkg_green)
+
+
+	
+	while not rospy.is_shutdown():
+		
+		#Storing the positions of first three red boxes in a list
+		r_s=list(red_set)
+		r_s.sort()
+		if len(r_s)>=3:
+			r_s=r_s[:3]
+
+		#Storing the positions of first three yellow boxes in a list
+		y_s=list(yellow_set)
+		y_s.sort()
+		if len(y_s)>=3:
+			y_s=y_s[:3]
+
+
+		#Storing the positions of first three green boxes in a list
+		g_s=list(green_set)
+		g_s.sort()
+		if len(g_s)>=3:
+			g_s=g_s[:3]
+
+		file_pkg="going_to_"
+		file_conveyor="_to_conveyor.yaml"
+
+		# for picking red boxes
+		for r in r_s:
+
+			red_shelf_pkg=file_pkg+r+".yaml"
+			red_shelf_conveyor=r+file_conveyor
+
+			# go to red box
+			ur5.moveit_hard_play_planned_path_from_file(ur5._file_path, red_shelf_pkg, 5)
+
+			ur5.vaccum(True)
+			ur5.attach_box('attach')
+			
+			# go to conveyor
+			ur5.moveit_hard_play_planned_path_from_file(ur5._file_path, red_shelf_conveyor, 5)
+			
+			ur5.attach_box('detach')
+			ur5.vaccum(False)
+			
+		# for picking yellow boxes			
+		for y in y_s:
+
+			yellow_shelf_pkg=file_pkg+y+".yaml"
+			yellow_shelf_conveyor=y+file_conveyor
+
+			# go to yellow box
+			ur5.moveit_hard_play_planned_path_from_file(ur5._file_path, yellow_shelf_pkg, 5)
+			ur5.vaccum(True)
+			
+			ur5.attach_box('attach')
+			
+			# go to conveyor
+			ur5.moveit_hard_play_planned_path_from_file(ur5._file_path, yellow_shelf_conveyor, 5)
+
+			ur5.attach_box('detach')
+			ur5.vaccum(False)
+			
+		# for picking green boxes
+		for g in g_s:
+
+			green_shelf_pkg=file_pkg+g+".yaml"
+			green_shelf_conveyor=g+file_conveyor
+
+			# go to green box
+			ur5.moveit_hard_play_planned_path_from_file(ur5._file_path, green_shelf_pkg, 5)
+			
+			ur5.vaccum(True)
+			ur5.attach_box('attach')
+			
+			# go to conveyor
+			ur5.moveit_hard_play_planned_path_from_file(ur5._file_path, green_shelf_conveyor, 5)
+			
+			ur5.attach_box('detach')
+			ur5.vaccum(False)
+			
+	
+		del ur5
+
+
+
+if __name__ == '__main__':
+	main()

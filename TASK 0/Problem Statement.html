@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="js sidebar-visible light" lang="en"><head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Problem Statement - eYRC 2020-21: Vargi Bots (VB)</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="rgba(0, 0, 0, 0)">
+
+        <!-- 
+        <link rel="icon" href="../../favicon.svg">
+         -->
+        
+        <link rel="shortcut icon" href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/favicon.png">
+        
+        <link rel="stylesheet" href="Problem%20Statement_files/variables.css">
+        <link rel="stylesheet" href="Problem%20Statement_files/general.css">
+        <link rel="stylesheet" href="Problem%20Statement_files/chrome.css">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="Problem%20Statement_files/font-awesome.css">
+        
+        <link rel="stylesheet" href="Problem%20Statement_files/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="Problem%20Statement_files/highlight.css">
+        <link rel="stylesheet" href="Problem%20Statement_files/tomorrow-night.css" disabled="">
+        <link rel="stylesheet" href="Problem%20Statement_files/ayu-highlight.css" disabled="">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script async="" src="Problem%20Statement_files/analytics.js"></script><script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents" aria-hidden="false">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/home/home.html" tabindex="0"><strong aria-hidden="true">1.</strong> Home</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/home/bb.html" tabindex="0"><strong aria-hidden="true">1.1.</strong> Bulletin Board</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/home/changelog.html" tabindex="0"><strong aria-hidden="true">1.2.</strong> Changelog</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/learn.html" tabindex="0"><strong aria-hidden="true">2.</strong> Learn</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/resources/learn-books.html" tabindex="0"><strong aria-hidden="true">2.1.</strong> Books</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/linux/learn-linux.html" tabindex="0"><strong aria-hidden="true">2.2.</strong> Linux</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/linux/learn-linux-file-system.html" tabindex="0"><strong aria-hidden="true">2.2.1.</strong> Linux File System Directories</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/linux/learn-linux-file-permissions.html" tabindex="0"><strong aria-hidden="true">2.2.2.</strong> Linux File Permissions</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/linux/learn-linux-command.html" tabindex="0"><strong aria-hidden="true">2.2.3.</strong> Linux Commands</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/linux/learn-linux-shell.html" tabindex="0"><strong aria-hidden="true">2.2.4.</strong> Shell Scripting</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/linux/learn-eg-hello-sh.html" tabindex="0"><strong aria-hidden="true">2.2.4.1.</strong> Example #1: Hello Shell Scripting</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/linux/learn-eg-shell-script-2-webpages.html" tabindex="0"><strong aria-hidden="true">2.2.4.2.</strong> Example #2: Open Webpages</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-programming.html" tabindex="0"><strong aria-hidden="true">2.3.</strong> Programming</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-programming-oop.html" tabindex="0"><strong aria-hidden="true">2.3.1.</strong> Object Oriented Programming (OOP)</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-programming-oop-py.html" tabindex="0"><strong aria-hidden="true">2.3.1.1.</strong> OOP in Python</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-prog-eg-py-oop-1.html" tabindex="0"><strong aria-hidden="true">2.3.1.2.</strong> Example #1: Get Classy!</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-prog-threading.html" tabindex="0"><strong aria-hidden="true">2.3.2.</strong> Threading</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-programming-threading-py.html" tabindex="0"><strong aria-hidden="true">2.3.2.1.</strong> Threading in Python</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-prog-eg-py-threading-1.html" tabindex="0"><strong aria-hidden="true">2.3.2.2.</strong> Example #1: Threading in Python</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-prog-eg-py-threading-2.html" tabindex="0"><strong aria-hidden="true">2.3.2.3.</strong> Example #2: Threading in Python</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-programming-callbacks.html" tabindex="0"><strong aria-hidden="true">2.3.3.</strong> Function Pointers and Callbacks</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-prog-eg-py-callbacks-1.html" tabindex="0"><strong aria-hidden="true">2.3.3.1.</strong> Example #1: Function Pointers in Python</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-prog-eg-py-callbacks-2.html" tabindex="0"><strong aria-hidden="true">2.3.3.2.</strong> Example #2: Threading with Callbacks in Python</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/programming/learn-programming-robust-systems.html" tabindex="0"><strong aria-hidden="true">2.3.4.</strong> Beautiful and Robust Systems</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-intro-iot.html" tabindex="0"><strong aria-hidden="true">2.4.</strong> IoT</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-iot-protocols.html" tabindex="0"><strong aria-hidden="true">2.4.1.</strong> IoT Protocols</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-iot-http.html" tabindex="0"><strong aria-hidden="true">2.4.1.1.</strong> HTTP Protocol</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-iot-mqtt.html" tabindex="0"><strong aria-hidden="true">2.4.1.2.</strong> MQTT Protocol</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-iot-mqtt-hivemq.html" tabindex="0"><strong aria-hidden="true">2.4.1.2.1.</strong> HiveMQ</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-iot-mqtt-paho.html" tabindex="0"><strong aria-hidden="true">2.4.1.2.2.</strong> Paho MQTT Library</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-iot-gas.html" tabindex="0"><strong aria-hidden="true">2.4.2.</strong> Google Apps Script</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-iot-gas-sheet.html" tabindex="0"><strong aria-hidden="true">2.4.2.1.</strong> Example #1: Updating Data into Google Spreadhseets</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-iot-gas-gmail-alert.html" tabindex="0"><strong aria-hidden="true">2.4.2.2.</strong> Example #2: Sending Gmail Alerts</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-iot-gas-req.html" tabindex="0"><strong aria-hidden="true">2.4.2.3.</strong> Example #3: Updating Google Sheets using HTTP requests</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/learn-iot-gas-video.html" tabindex="0"><strong aria-hidden="true">2.4.2.4.</strong> Google Apps Script Walkthrough Video</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/dashboard/intro.html" tabindex="0"><strong aria-hidden="true">2.4.3.</strong> Dashboard</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/dashboard/json.html" tabindex="0"><strong aria-hidden="true">2.4.3.1.</strong> Google Sheet as JSON End-Point</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/dashboard/ajax.html" tabindex="0"><strong aria-hidden="true">2.4.3.2.</strong> Update a Webpage using AJAX</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/dashboard/map.html" tabindex="0"><strong aria-hidden="true">2.4.3.3.</strong> Adding Interactive Map in a Webpage</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/dashboard/sheet.html" tabindex="0"><strong aria-hidden="true">2.4.3.4.</strong> Adding Dynamic Graphs to a Webpage</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/iot/dashboard/github_pages.html" tabindex="0"><strong aria-hidden="true">2.4.3.5.</strong> Hosting your Dashboard using Github Pages</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-intro.html" tabindex="0"><strong aria-hidden="true">2.5.</strong> ROS Basics</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-installation.html" tabindex="0"><strong aria-hidden="true">2.5.1.</strong> ROS Installation</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-workspace.html" tabindex="0"><strong aria-hidden="true">2.5.2.</strong> ROS Workspace</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-create-workspace.html" tabindex="0"><strong aria-hidden="true">2.5.2.1.</strong> Create a Catkin Workspace</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-pkg.html" tabindex="0"><strong aria-hidden="true">2.5.3.</strong> ROS Package</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-create-pkg.html" tabindex="0"><strong aria-hidden="true">2.5.3.1.</strong> Create a ROS Package</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-nodes.html" tabindex="0"><strong aria-hidden="true">2.5.4.</strong> ROS Nodes</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-create-node.html" tabindex="0"><strong aria-hidden="true">2.5.4.1.</strong> Create a ROS Node</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-nodes-cmd-rosrun.html" tabindex="0"><strong aria-hidden="true">2.5.4.2.</strong> Command: rosrun</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-nodes-cmd-rosnode.html" tabindex="0"><strong aria-hidden="true">2.5.4.3.</strong> Command: rosnode</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-master.html" tabindex="0"><strong aria-hidden="true">2.5.5.</strong> ROS Master</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-parameter-server.html" tabindex="0"><strong aria-hidden="true">2.5.6.</strong> ROS Parameter Server</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-parameter-yaml.html" tabindex="0"><strong aria-hidden="true">2.5.6.1.</strong> Load Parameters using YAML file</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-parameter-eg1.html" tabindex="0"><strong aria-hidden="true">2.5.6.2.</strong> Example #1: ROS Node to Get and Set Parameters</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-launch.html" tabindex="0"><strong aria-hidden="true">2.5.7.</strong> ROS Launch Files</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-launch-create.html" tabindex="0"><strong aria-hidden="true">2.5.7.1.</strong> Create a ROS Launch File</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-launch-eg1.html" tabindex="0"><strong aria-hidden="true">2.5.7.2.</strong> Example #1: Launch two ROS Nodes</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-launch-eg2.html" tabindex="0"><strong aria-hidden="true">2.5.7.3.</strong> Example #2: Launch Turtle in Forest</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-launch-eg3.html" tabindex="0"><strong aria-hidden="true">2.5.7.4.</strong> Example #3: Load YAML</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-launch-eg4.html" tabindex="0"><strong aria-hidden="true">2.5.7.5.</strong> Example #4: Launch Shell Script and ROS Node</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm.html" tabindex="0"><strong aria-hidden="true">2.5.8.</strong> ROS Communication</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-topic.html" tabindex="0"><strong aria-hidden="true">2.5.8.1.</strong> ROS Topics</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-topic-cmd-rostopic.html" tabindex="0"><strong aria-hidden="true">2.5.8.1.1.</strong> Command: rostopic</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-topic-cmd-rostopic-list.html" tabindex="0"><strong aria-hidden="true">2.5.8.1.1.1.</strong> list</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-topic-cmd-rostopic-type.html" tabindex="0"><strong aria-hidden="true">2.5.8.1.1.2.</strong> type, info and rosmsg</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-topic-cmd-rostopic-pub.html" tabindex="0"><strong aria-hidden="true">2.5.8.1.1.3.</strong> pub</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-topic-cmd-rostopic-echo.html" tabindex="0"><strong aria-hidden="true">2.5.8.1.1.4.</strong> echo</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-topic-eg1.html" tabindex="0"><strong aria-hidden="true">2.5.8.1.2.</strong> Example #1: Pub-Sub with Custom Message</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-services.html" tabindex="0"><strong aria-hidden="true">2.5.8.2.</strong> ROS Services</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-services-create-srv.html" tabindex="0"><strong aria-hidden="true">2.5.8.2.1.</strong> Create a srv file</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-services-testing.html" tabindex="0"><strong aria-hidden="true">2.5.8.2.2.</strong> Test ROS Services - Server and Client</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-actions.html" tabindex="0"><strong aria-hidden="true">2.5.8.3.</strong> ROS Actions</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-actions-msg.html" tabindex="0"><strong aria-hidden="true">2.5.8.3.1.</strong> Create a action message file</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-actions-simple.html" tabindex="0"><strong aria-hidden="true">2.5.8.3.2.</strong> Simple Action Server &amp; Client</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-actions-simple-server-eg1.html" tabindex="0"><strong aria-hidden="true">2.5.8.3.2.1.</strong> Example #1: Simple Action Server</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-actions-simple-client-eg2.html" tabindex="0"><strong aria-hidden="true">2.5.8.3.2.2.</strong> Example #2: Simple Action Client</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-actions-original.html" tabindex="0"><strong aria-hidden="true">2.5.8.3.3.</strong> Action Server &amp; Client</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-actions-server-eg1.html" tabindex="0"><strong aria-hidden="true">2.5.8.3.3.1.</strong> Example #1: Action Server</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-actions-client-eg2.html" tabindex="0"><strong aria-hidden="true">2.5.8.3.3.2.</strong> Example #2: Action Client</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-comm-actions-videos.html" tabindex="0"><strong aria-hidden="true">2.5.8.3.4.</strong> ROS Actions Walkthrough Videos</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-misc.html" tabindex="0"><strong aria-hidden="true">2.5.9.</strong> Miscellaneous</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-nodes-rospy.html" tabindex="0"><strong aria-hidden="true">2.5.9.1.</strong> Overview of rospy</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-rqt-graph.html" tabindex="0"><strong aria-hidden="true">2.5.9.2.</strong> rqt_graph</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/learn-ros-manipulation-intro.html" tabindex="0"><strong aria-hidden="true">2.6.</strong> ROS Manipulation</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/learn-ros-manipulation-manipulators.html" tabindex="0"><strong aria-hidden="true">2.6.1.</strong> Robotic Manipulators</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/learn-ros-manipulation-kinematics.html" tabindex="0"><strong aria-hidden="true">2.6.2.</strong> Kinematics</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/learn-robo-sim.html" tabindex="0"><strong aria-hidden="true">2.6.3.</strong> Robotics Simulation Overview</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-1-intro.html" tabindex="0"><strong aria-hidden="true">2.6.4.</strong> MoveIt!</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-2-setup-asst.html" tabindex="0"><strong aria-hidden="true">2.6.4.1.</strong> MoveIt! Setup Assistant</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-3-rviz-interface.html" tabindex="0"><strong aria-hidden="true">2.6.4.2.</strong> RViz Interface</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-4-gazebo-interface.html" tabindex="0"><strong aria-hidden="true">2.6.4.3.</strong> Gazebo Interface</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-5-python-apis.html" tabindex="0"><strong aria-hidden="true">2.6.4.4.</strong> Python APIs</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-5-python-apis-eg1.html" tabindex="0"><strong aria-hidden="true">2.6.4.4.1.</strong> Example #1: Print Pose of EE and Joint Angles</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-5-python-apis-eg2.html" tabindex="0"><strong aria-hidden="true">2.6.4.4.2.</strong> Example #2: Make UR5 to go a Pre-defined Pose</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-5-python-apis-eg3.html" tabindex="0"><strong aria-hidden="true">2.6.4.4.3.</strong> Example #3: Set the Joint Angles of UR5</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-5-python-apis-eg4.html" tabindex="0"><strong aria-hidden="true">2.6.4.4.4.</strong> Example #4: Make the EE go to a Pose</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-5-python-apis-eg5.html" tabindex="0"><strong aria-hidden="true">2.6.4.4.5.</strong> Example #5: Make the EE follow a Cartesian Path</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-6-add-object.html" tabindex="0"><strong aria-hidden="true">2.6.4.5.</strong> Adding objects to the Planning Scene</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-6-add-object-obstacle.html" tabindex="0"><strong aria-hidden="true">2.6.4.5.1.</strong> Adding obstacle</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-6-add-object-ee.html" tabindex="0"><strong aria-hidden="true">2.6.4.5.2.</strong> Attaching object to EE</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-6-add-object-behaviour.html" tabindex="0"><strong aria-hidden="true">2.6.4.5.3.</strong> Behaviour with and without objects</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-7-save-play-trajectory.html" tabindex="0"><strong aria-hidden="true">2.6.4.6.</strong> Saving and Playing Trajectories</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-5-python-apis-eg6.html" tabindex="0"><strong aria-hidden="true">2.6.4.6.1.</strong> Example #6: Saving Planned Trajectory in a YAML file</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-manipulation/moveit/learn-moveit-5-python-apis-eg7.html" tabindex="0"><strong aria-hidden="true">2.6.4.6.2.</strong> Example #7: Playing a Planned Trajectory from a YAML file</a></li></ol></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-perception/learn-ros-perception-intro.html" tabindex="0"><strong aria-hidden="true">2.7.</strong> ROS Perception</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-perception/learn-tf.html" tabindex="0"><strong aria-hidden="true">2.7.1.</strong> TF</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-perception/learn-tf-eg-1.html" tabindex="0"><strong aria-hidden="true">2.7.1.1.</strong> Example#1: Print Transform</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-perception/learn-tf-eg-2.html" tabindex="0"><strong aria-hidden="true">2.7.1.2.</strong> Example#2: Using TF in Manipulation</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-perception/learn-logical-cam.html" tabindex="0"><strong aria-hidden="true">2.7.2.</strong> Logical Camera</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-perception/learn-2d-camera.html" tabindex="0"><strong aria-hidden="true">2.7.3.</strong> 2D Camera</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-perception/learn-2d-camera-eg1.html" tabindex="0"><strong aria-hidden="true">2.7.3.1.</strong> Example#1: Echo 2D Camera Output</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-perception/learn-2d-camera-eg2.html" tabindex="0"><strong aria-hidden="true">2.7.3.2.</strong> Example#2: Colour Detection</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-perception/learn-2d-camera-eg3.html" tabindex="0"><strong aria-hidden="true">2.7.3.3.</strong> Example#3: QR Decoding</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/vb-sim/learn-vb-sim-1.html" tabindex="0"><strong aria-hidden="true">2.8.</strong> Vargi Bots Simulation</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/vb-sim/learn-vb-sim-2-vacuum-gripper.html" tabindex="0"><strong aria-hidden="true">2.8.1.</strong> Vacuum Gripper</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/vb-sim/learn-vb-sim-3-conveyor.html" tabindex="0"><strong aria-hidden="true">2.8.2.</strong> Conveyor Belt</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/vb-sim/learn-vb-sim-4-logical-camera.html" tabindex="0"><strong aria-hidden="true">2.8.3.</strong> Logical Camera</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/vb-sim/learn-vb-sim-5-camera.html" tabindex="0"><strong aria-hidden="true">2.8.4.</strong> 2D Camera</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/vb-sim/learn-vb-sim-vids.html" tabindex="0"><strong aria-hidden="true">2.8.5.</strong> Walkthrough Videos</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/eyrc.html" tabindex="0"><strong aria-hidden="true">3.</strong> eYRC 2020-21</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/eyrc-deadlines.html" tabindex="0"><strong aria-hidden="true">3.1.</strong> Deadlines</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/eyrc-guide-ey-note.html" tabindex="0"><strong aria-hidden="true">3.2.</strong> Guidelines</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/rulebook/introduction.html" tabindex="0"><strong aria-hidden="true">3.3.</strong> Rulebook</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/rulebook/rulebook_theme_arena_description.html" tabindex="0"><strong aria-hidden="true">3.3.1.</strong> Theme Arena and Description</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/rulebook/rulebook_software_specs.html" tabindex="0"><strong aria-hidden="true">3.3.2.</strong> Software Specifications</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/rulebook/rulebook_theme_flow.html" tabindex="0"><strong aria-hidden="true">3.3.3.</strong> Theme Flow</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/rulebook/rulebook_theme_rules.html" tabindex="0"><strong aria-hidden="true">3.3.4.</strong> Theme Rules</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/rulebook/rulebook_score.html" tabindex="0"><strong aria-hidden="true">3.3.5.</strong> Judging and Scoring System</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/rulebook/rulebook_important_note.html" tabindex="0"><strong aria-hidden="true">3.3.6.</strong> Important Notes</a></li></ol></li><li class="chapter-item expanded "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0.html" tabindex="0"><strong aria-hidden="true">3.4.</strong> Task 0</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-prereq.html" tabindex="0"><strong aria-hidden="true">3.4.1.</strong> Prerequisites</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-installations.html" tabindex="0"><strong aria-hidden="true">3.4.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-learn.html" tabindex="0"><strong aria-hidden="true">3.4.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item expanded "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-problem-statement.html" class="active" tabindex="0"><strong aria-hidden="true">3.4.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-expected-output.html" tabindex="0"><strong aria-hidden="true">3.4.3.</strong> Expected Output</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-submission.html" tabindex="0"><strong aria-hidden="true">3.4.4.</strong> Submission Instruction</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-sub-recording.html" tabindex="0"><strong aria-hidden="true">3.4.4.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-submission-make.html" tabindex="0"><strong aria-hidden="true">3.4.4.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task1/eyrc-task1.html" tabindex="0"><strong aria-hidden="true">3.5.</strong> Task 1</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task1/eyrc-task1-prereq.html" tabindex="0"><strong aria-hidden="true">3.5.1.</strong> Prerequisites</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task1/eyrc-task1-id.html" tabindex="0"><strong aria-hidden="true">3.5.1.1.</strong> Google Account &amp; Unique ID for MQTT</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task1/eyrc-task1-learn.html" tabindex="0"><strong aria-hidden="true">3.5.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task1/eyrc-task1-problem-statement.html" tabindex="0"><strong aria-hidden="true">3.5.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task1/eyrc-task1-expected-output.html" tabindex="0"><strong aria-hidden="true">3.5.3.</strong> Expected Output</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task1/eyrc-task1-submission.html" tabindex="0"><strong aria-hidden="true">3.5.4.</strong> Submission Instruction</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task1/eyrc-task1-sub-google-sheets.html" tabindex="0"><strong aria-hidden="true">3.5.4.1.</strong> Google Spreadsheet and MQTT Unique ID for Submission</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task1/eyrc-task1-sub-recording.html" tabindex="0"><strong aria-hidden="true">3.5.4.2.</strong> Recording Logs</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task1/eyrc-task1-submission-make.html" tabindex="0"><strong aria-hidden="true">3.5.4.3.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task2/eyrc-task2.html" tabindex="0"><strong aria-hidden="true">3.6.</strong> Task 2</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task2/eyrc-task2-prereq.html" tabindex="0"><strong aria-hidden="true">3.6.1.</strong> Prerequisites</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task2/eyrc-task2-installations.html" tabindex="0"><strong aria-hidden="true">3.6.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task2/eyrc-task2-learn.html" tabindex="0"><strong aria-hidden="true">3.6.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task2/eyrc-task2-problem-statement.html" tabindex="0"><strong aria-hidden="true">3.6.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task2/eyrc-task2-expected-output.html" tabindex="0"><strong aria-hidden="true">3.6.3.</strong> Expected Output</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task2/eyrc-task2-submission.html" tabindex="0"><strong aria-hidden="true">3.6.4.</strong> Submission Instruction</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task2/eyrc-task2-sub-recording.html" tabindex="0"><strong aria-hidden="true">3.6.4.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task2/eyrc-task2-submission-make.html" tabindex="0"><strong aria-hidden="true">3.6.4.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3.html" tabindex="0"><strong aria-hidden="true">3.7.</strong> Task 3</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3-prereq.html" tabindex="0"><strong aria-hidden="true">3.7.1.</strong> Prerequisites</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3-installations.html" tabindex="0"><strong aria-hidden="true">3.7.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3-learn.html" tabindex="0"><strong aria-hidden="true">3.7.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3-problem-statement.html" tabindex="0"><strong aria-hidden="true">3.7.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3-expected-output.html" tabindex="0"><strong aria-hidden="true">3.7.3.</strong> Expected Output</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3-grading.html" tabindex="0"><strong aria-hidden="true">3.7.4.</strong> Grading Criteria</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3-submission.html" tabindex="0"><strong aria-hidden="true">3.7.5.</strong> Submission Instruction</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3-sub-recording.html" tabindex="0"><strong aria-hidden="true">3.7.5.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3-submission-make.html" tabindex="0"><strong aria-hidden="true">3.7.5.2.</strong> Making the submission</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task3/eyrc-task3-self-assess.html" tabindex="0"><strong aria-hidden="true">3.7.5.3.</strong> Self Assessment Form</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4.html" tabindex="0"><strong aria-hidden="true">3.8.</strong> Task 4</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4-prereq.html" tabindex="0"><strong aria-hidden="true">3.8.1.</strong> Prerequisites</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4-installations.html" tabindex="0"><strong aria-hidden="true">3.8.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4-learn.html" tabindex="0"><strong aria-hidden="true">3.8.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4-problem-statement.html" tabindex="0"><strong aria-hidden="true">3.8.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4-expected-output.html" tabindex="0"><strong aria-hidden="true">3.8.3.</strong> Expected Output</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4-grading.html" tabindex="0"><strong aria-hidden="true">3.8.4.</strong> Grading Criteria</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4-submission.html" tabindex="0"><strong aria-hidden="true">3.8.5.</strong> Submission Instruction</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4-sub-recording.html" tabindex="0"><strong aria-hidden="true">3.8.5.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4-submission-make.html" tabindex="0"><strong aria-hidden="true">3.8.5.2.</strong> Making the submission</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task4/eyrc-task4-self-assess.html" tabindex="0"><strong aria-hidden="true">3.8.5.3.</strong> Self Assessment Form</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5.html" tabindex="0"><strong aria-hidden="true">3.9.</strong> Task 5</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-prereq.html" tabindex="0"><strong aria-hidden="true">3.9.1.</strong> Prerequisites</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-installations.html" tabindex="0"><strong aria-hidden="true">3.9.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-learn.html" tabindex="0"><strong aria-hidden="true">3.9.1.2.</strong> Learning Resources</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-rulebook.html" tabindex="0"><strong aria-hidden="true">3.9.1.3.</strong> Rulebook</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-problem-statement.html" tabindex="0"><strong aria-hidden="true">3.9.2.</strong> Problem Statement</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-ps-1.html" tabindex="0"><strong aria-hidden="true">3.9.2.1.</strong> Objective</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-ps-2.html" tabindex="0"><strong aria-hidden="true">3.9.2.2.</strong> ROS Packages Requirement</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-ps-3.html" tabindex="0"><strong aria-hidden="true">3.9.2.3.</strong> Inventory Management Spreadsheet</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-ps-4.html" tabindex="0"><strong aria-hidden="true">3.9.2.4.</strong> Warehouse Dashboard</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-ps-5.html" tabindex="0"><strong aria-hidden="true">3.9.2.5.</strong> Documentation and Style Guide</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-ps-6.html" tabindex="0"><strong aria-hidden="true">3.9.2.6.</strong> Other Instructions</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-expected-output.html" tabindex="0"><strong aria-hidden="true">3.9.3.</strong> Expected Output</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-grading.html" tabindex="0"><strong aria-hidden="true">3.9.4.</strong> Grading Criteria</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-submission.html" tabindex="0"><strong aria-hidden="true">3.9.5.</strong> Submission Instruction</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-sub-recording.html" tabindex="0"><strong aria-hidden="true">3.9.5.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task5/eyrc-task5-submission-make.html" tabindex="0"><strong aria-hidden="true">3.9.5.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task6/eyrc-task6.html" tabindex="0"><strong aria-hidden="true">3.10.</strong> Task 6</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task6/eyrc-task6-prereq.html" tabindex="0"><strong aria-hidden="true">3.10.1.</strong> Prerequisites</a><a class="toggle" tabindex="0"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task6/eyrc-task6-installations.html" tabindex="0"><strong aria-hidden="true">3.10.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task6/eyrc-task6-test.html" tabindex="0"><strong aria-hidden="true">3.10.1.2.</strong> Testing Simulation Environment</a></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task6/eyrc-task6-problem-statement.html" tabindex="0"><strong aria-hidden="true">3.10.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task6/eyrc-task6-expected-output.html" tabindex="0"><strong aria-hidden="true">3.10.3.</strong> Expected Output</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task6/eyrc-task6-grading.html" tabindex="0"><strong aria-hidden="true">3.10.4.</strong> Grading Criteria</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task6/eyrc-task6-submission.html" tabindex="0"><strong aria-hidden="true">3.10.5.</strong> Submission Instruction</a></li></ol></li></ol></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/downloads/downloads.html" tabindex="0"><strong aria-hidden="true">4.</strong> Downloads</a></li><li class="chapter-item "><a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/help-feedback/help-feedback-intro.html" tabindex="0"><strong aria-hidden="true">5.</strong> Help &amp; Feedback</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- <html>
+	<head>
+	<style>
+		
+	@media only screen and (max-width: 600px) {
+	  .eyrc_ckt{
+			display:none;
+		}
+	}
+
+	</style>
+	</head>
+	<body>
+		<div>
+		<center></center>
+			<div style="display:flex; justify-content:space-between;padding:10px;padding-top:0">
+				<div >
+					<img src="http://mooc.e-yantra.org/img/eYantra_logo.svg" alt="e-yantra_logo" height="40px" style="padding:10px 15px;" />
+				</div>
+				<div>
+					<img src="https://raw.githubusercontent.com/kalindkaria/typora-md-assets/master/maze_bot/assets/eyrc-header.svg" height="80px"  class="eyrc_ckt">
+				</div>
+				<div style="font-weight:900;font-size:20px;text-align:center;padding:10px 15px">
+					Robotics Competition<br>
+					2020-21
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
+
+
+ -->
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar" style="top: 0px;">
+                    <div style="width:100%">
+                        
+	
+	<style>
+		
+	@media only screen and (max-width: 600px) {
+	  .eyrc_ckt{
+			display:none;
+		}
+	}
+
+	</style>
+	
+	
+		<div>
+		<center></center>
+			<div style="display:flex; justify-content:space-between;padding:10px;padding-top:0">
+				<div>
+					<img src="Problem%20Statement_files/eYantra_logo.svg" alt="e-yantra_logo" style="padding:10px 15px;" height="40px">
+				</div>
+				<div>
+					<img src="Problem%20Statement_files/eyrc-header.svg" class="eyrc_ckt" height="80px">
+				</div>
+				<div style="font-weight:900;font-size:20px;text-align:center;padding:10px 15px">
+					Robotics Competition<br>
+					2020-21
+				</div>
+			</div>
+			
+		</div>
+	
+
+
+
+
+                    </div>
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar" aria-expanded="true">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">eYRC 2020-21: Vargi Bots (VB)</h1>
+
+                    <div class="right-buttons">
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#problem-statement" id="problem-statement">Problem Statement</a></h1>
+<ul>
+<li>
+<p>The objective of the task is to move the turtle inside the <a href="http://wiki.ros.org/turtlesim"><strong>turtlesim</strong></a> window in a circle and stop at its initial location.</p>
+</li>
+<li>
+<p>Teams are supposed to do this by creating a nodes name, <strong><code class="hljs">/node_turtle_revolve</code></strong> within a python script, <code class="hljs">node_turtle_revolve.py</code>. </p>
+</li>
+</ul>
+<h2><a class="header" href="#procedure" id="procedure">Procedure</a></h2>
+<ol>
+<li>
+<p>First, create a package named <code class="hljs">pkg_task0</code>, within your catkin workspace. Once done, compile and source the packages.</p>
+<pre><div class="buttons"><button class="fa fa-copy clip-button" title="Copy to clipboard" aria-label="Copy to clipboard"><i class="tooltiptext"></i></button></div><code class="language-sh hljs bash"><span class="hljs-built_in">cd</span> ~/catkin_ws
+catkin build
+<span class="hljs-built_in">source</span> devel/setup.bash
+</code></pre>
+</li>
+<li>
+<p>Within this package, you should have a <code class="hljs">scripts</code> folder inside which you'll create a python script, named <code class="hljs">node_turtle_revolve.py</code>. </p>
+<blockquote>
+<p>Fill the script with <a href="https://alvinalexander.com/programming/clean-code-quotes-robert-c-martin/">proper programming ethics</a>. Doing this will help us understand your code better and quicker than usual.</p>
+</blockquote>
+</li>
+<li>
+<p>After completing the python script. Make it executable, if it isn't already. To do that, enter the following code.</p>
+<pre><div class="buttons"><button class="fa fa-copy clip-button" title="Copy to clipboard" aria-label="Copy to clipboard"><i class="tooltiptext"></i></button></div><code class="language-sh hljs bash">chmod +x ~/catkin_ws/src/pkg_task0/scripts/node_turtle_revolve.py
+</code></pre>
+</li>
+<li>
+<p>Before executing make sure that <code class="hljs">roscore</code> is running along with <code class="hljs">turtlesim_node</code>. You can either run them in separate terminals or simply create a <code class="hljs">task0.launch</code> file inside the <code class="hljs">~/catkin_ws/src/pkg_task0/launch/</code> folder. Launch file can run multiple nodes unlike a python/cpp script. Run the launch file, enter,</p>
+<pre><div class="buttons"><button class="fa fa-copy clip-button" title="Copy to clipboard" aria-label="Copy to clipboard"><i class="tooltiptext"></i></button></div><code class="language-sh hljs bash">roslaunch pkg_task0 task0.launch 
+</code></pre>
+<ul>
+<li>This should run three processes in parallel.
+<ul>
+<li><code class="hljs">roscore</code></li>
+<li><code class="hljs">turtlesim_node</code></li>
+<li><code class="hljs">node_turtle_revolve.py</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2><a class="header" href="#hints" id="hints">Hints</a></h2>
+<ol>
+<li>
+<p>The turtle needs to move in a circular motion with a certain radius. 
+This radius should be sufficient to fit within the turtlesim window. But
+ making it rotate in a circular manner, with only velocities to control 
+is something to think about. </p>
+</li>
+<li>
+<p>Use linear velocity as well as angular velocity with some combination to get this done. </p>
+</li>
+<li>
+<p>Keep tracking the distance travelled so as to know when to stop. You can refer to <a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/learn/ros-basics/learn-ros-nodes-rospy.html">Overview of rospy</a> for more hints.</p>
+</li>
+</ol>
+<blockquote>
+<p>Next Read: <a href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-expected-output.html">Expected Output</a></p>
+</blockquote>
+<hr>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-learn.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-expected-output.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-learn.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="https://portal.e-yantra.org/storage/xyBeoIQDWX_vb/eyrc/task0/eyrc-task0-expected-output.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-145861739-2', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="Problem%20Statement_files/elasticlunr.js" type="text/javascript" charset="utf-8"></script>
+        <script src="Problem%20Statement_files/mark.js" type="text/javascript" charset="utf-8"></script>
+        <script src="Problem%20Statement_files/searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="Problem%20Statement_files/clipboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="Problem%20Statement_files/highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="Problem%20Statement_files/book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    
+
+</body></html>
